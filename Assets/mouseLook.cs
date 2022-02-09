@@ -23,7 +23,6 @@ public class mouseLook : MonoBehaviour
 
         if (body != null) {
             body.freezeRotation = true;
-            
         }
     }
 

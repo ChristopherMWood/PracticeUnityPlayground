@@ -14,7 +14,6 @@ public class SpawnScript : MonoBehaviour
     }
 
     public void Spawn(GameObject prefab) {
-        Debug.Log("Spawned enemy");
         var spawnedObject = Instantiate(prefab, new Vector3(transform.position.x, transform.position.y * 2, transform.position.z), Quaternion.identity);
         spawnedObject.transform.rotation = transform.rotation;
     }
