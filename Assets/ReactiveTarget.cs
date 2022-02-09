@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ReactiveTarget : MonoBehaviour
@@ -20,6 +19,10 @@ public class ReactiveTarget : MonoBehaviour
         
     }
 
+    public bool IsAlive() {
+        return currentHealth > 0;
+    }
+
     public void ShowStats() {
         // GameObject text = new GameObject();
         // TextMesh t = text.AddComponent<TextMesh>();
@@ -30,18 +33,27 @@ public class ReactiveTarget : MonoBehaviour
         // t.transform.localPosition += new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
     }
 
-    public void ReactToHit() {
+    public void ReactToHit(Vector3 hitDirection) {
         currentHealth -= 25;
 
         if (currentHealth <= 0) {
-            StartCoroutine(Die());
+            currentHealth = 0;
+            StartCoroutine(Die(hitDirection));
+
         }
     }
 
-    private IEnumerator Die() {
-        this.transform.Rotate(-90, 0, 0);
+    private IEnumerator Die(Vector3 hitDirection) {
+        // this.transform.Rotate(-90, 0, 0);
 
-        yield return new WaitForSeconds(1.5f);
+        var rigidBody = GetComponent<Rigidbody>();
+        // GET ACTUAL HIT DIRECTION
+        // Vector3 dir = new Vector3 (100f, 0f, 0f);
+        // dir.Normalize ();
+        rigidBody.AddForce (hitDirection * 400);
+        // Play death audio
+
+        yield return new WaitForSeconds(5f);
 
         Destroy(this.gameObject);
     }

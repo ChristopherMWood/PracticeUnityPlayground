@@ -45,7 +45,7 @@ public class RayShooter : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             if (currentFocusedTarget != null) {
                 Debug.Log("Target Hit");
-                currentFocusedTarget.ReactToHit();
+                currentFocusedTarget.ReactToHit(ray.direction);
             } else {
                 StartCoroutine(SphereIndicator(hit.point));
             }
