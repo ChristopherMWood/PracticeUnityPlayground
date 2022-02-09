@@ -44,12 +44,7 @@ public class ReactiveTarget : MonoBehaviour
     }
 
     private IEnumerator Die(Vector3 hitDirection) {
-        // this.transform.Rotate(-90, 0, 0);
-
         var rigidBody = GetComponent<Rigidbody>();
-        // GET ACTUAL HIT DIRECTION
-        // Vector3 dir = new Vector3 (100f, 0f, 0f);
-        // dir.Normalize ();
         rigidBody.AddForce (hitDirection * 400);
         // Play death audio
 
