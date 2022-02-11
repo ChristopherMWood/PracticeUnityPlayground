@@ -11,7 +11,7 @@ ModelImporter:
     second: Armature|Walk_Cycle
   - first:
       74: 8549278155156183750
-    second: Armature|Walk_Cycle (1)
+    second: Armature|Walk_Cycle (2)
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -41,8 +41,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Walk_Cycle (1)
-      takeName: Armature|Walk_Cycle
+      name: Armature|Idle
+      takeName: Armature|Idle
       internalID: 0
       firstFrame: 0
       lastFrame: 39
