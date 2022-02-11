@@ -4,7 +4,7 @@ using UnityEngine;
 public class ReactiveTarget : MonoBehaviour
 {
     public int startingHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
     private TextMesh statsMesh;
 
     // Start is called before the first frame update
