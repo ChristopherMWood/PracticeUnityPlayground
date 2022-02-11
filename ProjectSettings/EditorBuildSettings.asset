@@ -11,4 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FPSTestScenes/TestFPSScene.unity
     guid: f5ca8a55b0bed4ee3a3a22e55f640a26
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 74ec866252b1242afb553584001cd764, type: 2}
