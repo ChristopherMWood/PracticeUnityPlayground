@@ -25,30 +25,30 @@ public class RayShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 point = new Vector3(cam.pixelWidth/2, cam.pixelHeight/2, 0);
-        Ray ray = cam.ScreenPointToRay(point);
-        RaycastHit hit;
+        // Vector3 point = new Vector3(cam.pixelWidth/2, cam.pixelHeight/2, 0);
+        // Ray ray = cam.ScreenPointToRay(point);
+        // RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit)) {
-            currentFocusedObject = hit.transform.gameObject;
-            currentFocusedTarget = currentFocusedObject.GetComponent<ReactiveTarget>();
-        } else  {
-            currentFocusedObject = null;
-            currentFocusedTarget = null;
-        }
+        // if (Physics.Raycast(ray, out hit)) {
+        //     currentFocusedObject = hit.transform.gameObject;
+        //     currentFocusedTarget = currentFocusedObject.GetComponent<ReactiveTarget>();
+        // } else  {
+        //     currentFocusedObject = null;
+        //     currentFocusedTarget = null;
+        // }
 
-        if (currentFocusedTarget != null) {
-            currentFocusedTarget.ShowStats();
-        }
+        // if (currentFocusedTarget != null) {
+        //     currentFocusedTarget.ShowStats();
+        // }
 
-        if (Input.GetMouseButtonDown(0)) {
-            if (currentFocusedTarget != null) {
-                Debug.Log("Target Hit");
-                currentFocusedTarget.ReactToHit(ray.direction);
-            } else {
-                StartCoroutine(SphereIndicator(hit.point));
-            }
-        }
+        // if (Input.GetMouseButtonDown(0)) {
+        //     if (currentFocusedTarget != null) {
+        //         Debug.Log("Target Hit");
+        //         currentFocusedTarget.ReactToHit(ray.direction);
+        //     } else {
+        //         StartCoroutine(SphereIndicator(hit.point));
+        //     }
+        // }
     }
 
     private IEnumerator SphereIndicator(Vector3 pos) {

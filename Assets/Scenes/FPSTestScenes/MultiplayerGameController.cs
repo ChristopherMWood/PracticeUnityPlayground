@@ -26,19 +26,19 @@ public class MultiplayerGameController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            showMenu = !showMenu;
+        // if (Input.GetKeyUp(KeyCode.Escape))
+        // {
+        //     showMenu = !showMenu;
 
-            if (showMenu)
-            {
-                OnOpenSettings();
-            }
-            else
-            {
-                OnCloseSettings();
-            }
-        }
+        //     if (showMenu)
+        //     {
+        //         OnOpenSettings();
+        //     }
+        //     else
+        //     {
+        //         OnCloseSettings();
+        //     }
+        // }
     }
 
     public void OnOpenSettings()

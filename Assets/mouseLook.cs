@@ -28,22 +28,22 @@ public class mouseLook : MonoBehaviour
 
     void Update()
     {
-        if (axes == RotationAxes.MouseX) {
-            transform.Rotate(0, Input.GetAxis("Mouse X") * HorizontalSensitivity, 0);
-        } else if (axes == RotationAxes.MouseY) {
-            CurrentVerticalRotation -= Input.GetAxis("Mouse Y") * VerticalSensitivity;
-            CurrentVerticalRotation = Mathf.Clamp(CurrentVerticalRotation, MinVertical, MaxVertical);
+        // if (axes == RotationAxes.MouseX) {
+        //     transform.Rotate(0, Input.GetAxis("Mouse X") * HorizontalSensitivity, 0);
+        // } else if (axes == RotationAxes.MouseY) {
+        //     CurrentVerticalRotation -= Input.GetAxis("Mouse Y") * VerticalSensitivity;
+        //     CurrentVerticalRotation = Mathf.Clamp(CurrentVerticalRotation, MinVertical, MaxVertical);
 
-            float horizontalRot = transform.localEulerAngles.y;
-            transform.localEulerAngles = new Vector3(CurrentVerticalRotation, horizontalRot, 0);
-        } else {
-            CurrentVerticalRotation -= Input.GetAxis("Mouse Y") * VerticalSensitivity;
-            CurrentVerticalRotation = Mathf.Clamp(CurrentVerticalRotation, MinVertical, MaxVertical);
+        //     float horizontalRot = transform.localEulerAngles.y;
+        //     transform.localEulerAngles = new Vector3(CurrentVerticalRotation, horizontalRot, 0);
+        // } else {
+        //     CurrentVerticalRotation -= Input.GetAxis("Mouse Y") * VerticalSensitivity;
+        //     CurrentVerticalRotation = Mathf.Clamp(CurrentVerticalRotation, MinVertical, MaxVertical);
 
-            float delta = Input.GetAxis("Mouse X") * HorizontalSensitivity;
-            float horizontalRotation = transform.localEulerAngles.y + delta;
+        //     float delta = Input.GetAxis("Mouse X") * HorizontalSensitivity;
+        //     float horizontalRotation = transform.localEulerAngles.y + delta;
 
-            transform.localEulerAngles = new Vector3(CurrentVerticalRotation, horizontalRotation, 0);
-        }
+        //     transform.localEulerAngles = new Vector3(CurrentVerticalRotation, horizontalRotation, 0);
+        // }
     }
 }
